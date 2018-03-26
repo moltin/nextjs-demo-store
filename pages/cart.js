@@ -77,7 +77,7 @@ export default class Cart extends React.Component {
 
   _handleRemoveFromCart = async itemId => {
     const { items, cartId } = this.state
-    const { data, meta } = await removeFromCart(itemId, cartId)
+    const { json: { data, meta } } = await removeFromCart(itemId, cartId)
 
     this.setState({
       items: data,
