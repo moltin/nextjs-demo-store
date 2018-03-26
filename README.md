@@ -2,7 +2,7 @@
 
 > 🛍 Next.js demo store built with moltin
 
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/moltin-examples/nextjs-demo-store)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/moltin-examples/nextjs-demo-store&env=MOLTIN_CLIENT_ID&env=STRIPE_KEY)
 
 Next.js webshop built using [Stripe checkout](https://stripe.com/checkout) and [moltin](https://moltin.com).
 
