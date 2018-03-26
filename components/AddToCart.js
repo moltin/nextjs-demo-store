@@ -11,12 +11,13 @@ export default class AddToCart extends React.Component {
   _handleSubmit = async () => {
     const { productId } = this.props
     const { quantity } = this.state
+    const cartId = await localStorage.getItem('mcart')
 
     this.setState({
       loading: true
     })
 
-    const cart = await addToCart(productId, quantity)
+    const cart = await addToCart(cartId, productId, quantity)
 
     this.setState({
       loading: false,

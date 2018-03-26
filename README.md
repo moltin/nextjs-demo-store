@@ -19,6 +19,6 @@ MOLTIN_CLIENT_ID=
 STRIPE_KEY=
 ```
 
-`yarn`
+`npm install`
 
-`yarn dev`
+`npm run dev`

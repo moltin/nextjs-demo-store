@@ -11,8 +11,18 @@ export default class Layout extends React.Component {
   componentDidMount() {
     const token = localStorage.getItem('customerToken')
 
+    const cartId = localStorage.getItem('mcart')
+
+    if (!cartId) {
+      const cartId = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[x]/g, () =>
+        ((Math.random() * 16) | 0).toString(16)
+      )
+      localStorage.setItem('mcart', cartId)
+    }
+
     this.setState({
-      token
+      token,
+      cartId
     })
   }
 

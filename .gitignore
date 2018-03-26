@@ -8,5 +8,4 @@ localStorage
 # misc
 .env
 .DS_Store
-package-lock.json
 *.log
