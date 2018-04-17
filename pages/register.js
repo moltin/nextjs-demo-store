@@ -23,8 +23,9 @@ export default class Register extends React.Component {
     })
 
     try {
-      const { token } = await register({ name, email, password })
+      const { id, token } = await register({ name, email, password })
       localStorage.setItem('customerToken', token)
+      localStorage.setItem('mcustomer', id)
       Router.push('/myaccount')
     } catch (e) {
       this.setState({

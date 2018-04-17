@@ -2,7 +2,6 @@
   "alias": "moltin-nextjs-demo-store",
   "dotenv": true,
   "env": {
-    "MOLTIN_CLIENT_ID": "@moltin-client-id",
-    "STRIPE_KEY": "@stripe-key"
+    "NODE_ENV": "production"
   }
 }

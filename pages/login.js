@@ -31,8 +31,9 @@ export default class Login extends React.Component {
     })
 
     try {
-      const { token } = await login({ email, password })
+      const { id, token } = await login({ email, password })
       localStorage.setItem('customerToken', token)
+      localStorage.setItem('mcustomer', id)
       Router.push('/myaccount')
     } catch (e) {
       console.log(e.message)
