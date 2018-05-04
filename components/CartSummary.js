@@ -3,7 +3,9 @@ import { Button, Segment, Divider } from 'semantic-ui-react'
 
 export default ({
   handleCheckout,
-  display_price: { with_tax: { amount, currency, formatted } }
+  display_price: {
+    with_tax: { amount, currency, formatted }
+  }
 }) => (
   <React.Fragment>
     <Divider />
@@ -13,13 +15,14 @@ export default ({
         name="NextJS Demo Store"
         amount={amount}
         currency={currency}
-        stripeKey={process.env.STRIPE_SECRET_KEY}
+        stripeKey={process.env.STRIPE_PUBLISHABLE_KEY}
         shippingAddress={false}
         billingAddress={true}
         zipCode={true}
         token={handleCheckout}
         reconfigureOnUpdate={false}
-        triggerEvent="onClick">
+        triggerEvent="onClick"
+      >
         <Button color="black" floated="right">
           Check out
         </Button>
