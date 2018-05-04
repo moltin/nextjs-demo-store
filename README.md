@@ -16,7 +16,7 @@ Create a `.env` file at the project root with your moltin `client_id` and Stripe
 
 ```dosini
 MOLTIN_CLIENT_ID=
-STRIPE_KEY=
+STRIPE_SECRET_KEY=
 ```
 
 `npm install`

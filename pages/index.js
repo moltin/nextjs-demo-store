@@ -10,7 +10,9 @@ const Home = ({ products }) => (
 )
 
 Home.getInitialProps = async () => {
-  const { json: { data, included: { main_images } } } = await getProducts()
+  const {
+    json: { data, included }
+  } = await getProducts()
 
   const products = data.map(product => {
     const imageId = product.relationships.main_image
@@ -20,7 +22,7 @@ Home.getInitialProps = async () => {
     return {
       ...product,
       image: imageId
-        ? main_images.find(img => img.id === imageId).link.href
+        ? included.main_images.find(img => img.id === imageId).link.href
         : '/static/moltin-light-hex.svg'
     }
   })

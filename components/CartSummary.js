@@ -13,7 +13,7 @@ export default ({
         name="NextJS Demo Store"
         amount={amount}
         currency={currency}
-        stripeKey={process.env.STRIPE_KEY}
+        stripeKey={process.env.STRIPE_SECRET_KEY}
         shippingAddress={false}
         billingAddress={true}
         zipCode={true}
