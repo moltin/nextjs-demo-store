@@ -23,7 +23,7 @@ export default ({ items, removeFromCart, loading, completed }) => {
     )
 
   const mapCartItemsToItems = items =>
-    items.map(({ id, product_id, name, quantity, meta }) => {
+    items.map(({ id, product_id, name, quantity, meta, image: { href: image } }) => {
       const price = meta.display_price.with_tax.unit.formatted || ''
 
       return {
@@ -33,6 +33,7 @@ export default ({ items, removeFromCart, loading, completed }) => {
             <Item.Header as="a">{name}</Item.Header>
           </Link>
         ),
+        image,
         meta: `${quantity}x ${price}`,
         extra: (
           <Button
