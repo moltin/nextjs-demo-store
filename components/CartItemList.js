@@ -23,8 +23,9 @@ export default ({ items, removeFromCart, loading, completed }) => {
     )
 
   const mapCartItemsToItems = items =>
-    items.map(({ id, product_id, name, quantity, meta, image: { href: image } }) => {
+    items.map(({ id, product_id, name, quantity, meta, image }) => {
       const price = meta.display_price.with_tax.unit.formatted || ''
+      const imageUrl = image.href || '/static/moltin-light-hex.svg'
 
       return {
         childKey: id,
@@ -33,7 +34,7 @@ export default ({ items, removeFromCart, loading, completed }) => {
             <Item.Header as="a">{name}</Item.Header>
           </Link>
         ),
-        image,
+        image: imageUrl,
         meta: `${quantity}x ${price}`,
         extra: (
           <Button
