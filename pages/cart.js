@@ -47,7 +47,7 @@ export default class Cart extends React.Component {
       }
     } = data
 
-    const customer = token ? customerId : { name, email }
+    const customer = customerId ? customerId : { name, email }
 
     const address = {
       first_name: name.split(' ')[0],
