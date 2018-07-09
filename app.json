@@ -9,7 +9,7 @@
     "MOLTIN_CLIENT_ID": {
       "description":
         "The client_is is the unique ID associated with your store. You can find this inside your moltin Dashboard.",
-      "value": "j6hSilXRQfxKohTndUuVrErLcSJWP15P347L6Im0M4"
+      "value": "EdP3Gi1agyUF3yFS7Ngm8iyodLgbSR3wY4ceoJl0d2"
     },
     "STRIPE_KEY": {
       "description":
