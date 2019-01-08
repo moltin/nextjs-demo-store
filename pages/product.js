@@ -12,7 +12,7 @@ const ProductPage = ({ product }) => (
 )
 
 ProductPage.getInitialProps = async ({ query: { id } }) => {
-  const { json: { data, included: { main_images } } } = await getProductById(id)
+  const { data, included: { main_images } }  = await getProductById(id)
 
   const imageId = data.relationships.main_image
     ? data.relationships.main_image.data.id

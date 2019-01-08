@@ -18,9 +18,7 @@ export default class Cart extends React.Component {
 
   async componentDidMount() {
     const cartId = await localStorage.getItem('mcart')
-    const {
-      json: { data, meta }
-    } = await getCartItems(cartId)
+    const  { data, meta } = await getCartItems(cartId)
 
     this.setState({
       items: data,
@@ -60,11 +58,7 @@ export default class Cart extends React.Component {
     }
 
     try {
-      const {
-        json: {
-          data: { id }
-        }
-      } = await checkoutCart(cartId, customer, address)
+      const  { data: { id } } = await checkoutCart(cartId, customer, address)
       await payForOrder(id, token, email)
 
       this.setState({
@@ -77,9 +71,7 @@ export default class Cart extends React.Component {
 
   _handleRemoveFromCart = async itemId => {
     const { items, cartId } = this.state
-    const {
-      json: { data, meta }
-    } = await removeFromCart(itemId, cartId)
+    const { data, meta } = await removeFromCart(itemId, cartId)
 
     this.setState({
       items: data,

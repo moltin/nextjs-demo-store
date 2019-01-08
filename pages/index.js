@@ -10,9 +10,7 @@ const Home = ({ products }) => (
 )
 
 Home.getInitialProps = async () => {
-  const {
-    json: { data, included }
-  } = await getProducts()
+  const  { data, included } = await getProducts()
 
   const products = data.map(product => {
     const imageId = product.relationships.main_image
