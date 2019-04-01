@@ -18,7 +18,7 @@ export default class MyAccount extends React.Component {
       Router.push('/login')
     }
 
-    const { json: { data, included, meta } } = await getOrders(token)
+    const { data, included, meta } = await getOrders(token)
 
     const orders = data.map(order => {
       // const orderItems = order.relationships.items.data
