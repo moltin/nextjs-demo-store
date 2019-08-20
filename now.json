@@ -1,7 +1,22 @@
 {
   "alias": "moltin-nextjs-demo-store",
-  "dotenv": true,
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "build": {
+    "env": {
+      "MOLTIN_CLIENT_ID": "@demo-moltin-client-id",
+      "STRIPE_PUBLISHABLE_KEY": "@demo-stripe-publishable-test-key"
+    },
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@now/next"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "version": 2
 }
